@@ -29,21 +29,16 @@ resource "aws_vpc" "my_vpc" {
 }
 
 # Create  subnets
-resource "aws_subnet" "public_subnets" {
-  count = length(var.public_subnet_cidr_blocks)
-
+resource "aws_subnet" "subnet1" {
   vpc_id            = aws_vpc.my_vpc.id
-  cidr_block        = var.public_subnet_cidr_blocks[count.index]
-
-  availability_zone = element(data.aws_availability_zones.available.names, count.index)
-
-  tags = {
-    Name = "PublicSubnet${count.index + 1}"
-  }
+  cidr_block = "10.0.3.0/24"
+  availability_zone = "us-east-1a"
 }
 
-data "aws_availability_zones" "available" {
-  state = "available"
+resource "aws_subnet" "subnet2" {
+  vpc_id            = aws_vpc.my_vpc.id
+  cidr_block = "10.0.4.0/24"
+  availability_zone = "us-east-1b"
 }
 
 # Create an EKS cluster

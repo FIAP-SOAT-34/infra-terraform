@@ -1,7 +1,12 @@
+// Outputs subnets to be used in db repository
+output "subnet1_id" {
+   value       = aws_subnet.subnet1.id
+   description = "The ID subnet 1"
+}
 
-output "vpc_id" {
-  value       = aws_vpc.my_vpc.id
-  description = "The ID of the VPC"
+output "subnet2_id" {
+   value       = aws_subnet.subnet2.id
+   description = "The ID subnet 2"
 }
 
 # output "eks_cluster_endpoint" {
