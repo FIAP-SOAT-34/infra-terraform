@@ -1,5 +1,5 @@
 terraform {
-   required_providers {
+  required_providers {
     aws = {
       source  = "hashicorp/aws"
       version = "~> 4.54.0"
@@ -31,13 +31,13 @@ resource "aws_vpc" "my_vpc" {
 # Create  subnets
 resource "aws_subnet" "subnet1" {
   vpc_id            = aws_vpc.my_vpc.id
-  cidr_block = "10.0.3.0/24"
+  cidr_block        = "10.0.3.0/24"
   availability_zone = "us-east-1a"
 }
 
 resource "aws_subnet" "subnet2" {
   vpc_id            = aws_vpc.my_vpc.id
-  cidr_block = "10.0.4.0/24"
+  cidr_block        = "10.0.4.0/24"
   availability_zone = "us-east-1b"
 }
 
