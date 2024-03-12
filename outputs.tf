@@ -1,12 +1,12 @@
 // Outputs subnets to be used in db repository
 output "subnet1_id" {
-   value       = aws_subnet.subnet1.id
-   description = "The ID subnet 1"
+  value       = aws_subnet.subnet1.id
+  description = "The ID subnet 1"
 }
 
 output "subnet2_id" {
-   value       = aws_subnet.subnet2.id
-   description = "The ID subnet 2"
+  value       = aws_subnet.subnet2.id
+  description = "The ID subnet 2"
 }
 
 # output "eks_cluster_endpoint" {
